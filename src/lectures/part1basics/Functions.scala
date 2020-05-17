@@ -1,5 +1,7 @@
 package lectures.part1basics
 
+import scala.annotation.tailrec
+
 object Functions extends App {
 
   def aFunction(a: String, b: Int): String = {
@@ -36,7 +38,7 @@ object Functions extends App {
 
   // Factorial
   def factorial(n: Int): Int =
-    if (n <= 0) n
+    if (n <= 1) 1
     else n * factorial(n - 1)
   println(factorial(4))
 
@@ -48,6 +50,7 @@ object Functions extends App {
   println(fibonacci(18))
 
   def prime(n: Int): Boolean = {
+    @tailrec
     def f(rn: Int, acc: Int): Boolean = {
       if (rn == acc) {
         true
